@@ -1,5 +1,7 @@
 import Link from "next/link";
 import LiveTicker from "@/components/live-ticker";
+import FollowTheMoney from "@/components/follow-the-money";
+import MoneyCursor from "@/components/money-cursor";
 
 const articles = [
   {
@@ -31,6 +33,7 @@ const articles = [
 export default function Home() {
   return (
     <main>
+      <MoneyCursor />
       <header className="header">
         <Link href="/" className="logo" aria-label="The Ledger home">THE LEDGER</Link>
         <nav aria-label="Primary navigation">
@@ -58,7 +61,7 @@ export default function Home() {
             <div className="visual-grid"></div><div className="data-line line-one"></div><div className="data-line line-two"></div><div className="data-line line-three"></div>
             <div className="data-node node-one"></div><div className="data-node node-two"></div><div className="data-node node-three"></div><div className="data-node node-four"></div>
             <div className="hero-orbit orbit-one"></div><div className="hero-orbit orbit-two"></div>
-            <div className="visual-center"><span>LEDGER</span><strong>01</strong></div><div className="visual-caption"><span>FINANCIAL SYSTEMS</span><span>EST. 2026</span></div>
+            <div className="visual-center"><span>LEDGER</span><strong>₹</strong></div><div className="visual-caption"><span>FINANCIAL SYSTEMS</span><span>EST. 2026</span></div>
           </div>
         </div>
         <div className="hero-bottom"><span>THE DIGITAL ACCOUNTING ERA</span><span>SCROLL TO EXPLORE ↓</span></div>
@@ -88,7 +91,7 @@ export default function Home() {
 
       <section className="section technology" id="fintech"><div className="eyebrow">04 / TECHNOLOGY INDEX</div><h2>The machines<br />behind <span>modern finance.</span></h2><div className="tech-list"><div><span>01</span><strong>ARTIFICIAL INTELLIGENCE</strong><p>Prediction · Analysis · Decision support</p></div><div><span>02</span><strong>ROBOTIC PROCESS AUTOMATION</strong><p>Reconciliation · Data entry · Workflow</p></div><div><span>03</span><strong>CLOUD ACCOUNTING</strong><p>Connectivity · Collaboration · Scale</p></div><div><span>04</span><strong>BLOCKCHAIN</strong><p>Trust · Traceability · Digital records</p></div></div></section>
 
-      <section className="money section" id="audit"><div className="eyebrow">05 / INTERACTIVE</div><h2>Follow<br /><span>the money.</span></h2><p>A transaction enters an organization. Technology follows it all the way to the financial statements.</p><div className="flow"><div>INVOICE</div><span>→</span><div>AI EXTRACTION</div><span>→</span><div>ACCOUNTING SYSTEM</div><span>→</span><div>JOURNAL ENTRY</div><span>→</span><div>REPORT</div></div></section>
+      <section className="money section" id="audit"><div className="eyebrow">05 / INTERACTIVE</div><h2>Follow<br /><span>the money.</span></h2><p>A transaction enters an organization. Technology follows it all the way to the financial statements.</p><FollowTheMoney /></section>
 
       <section className="case-teaser section"><div className="case-teaser-inner"><div><div className="eyebrow">06 / CASE FILES</div><h2>Technology<br /><span>in the wild.</span></h2></div><div><p>Real organizations. Real accounting transformations. Explore how AI, cloud platforms and audit analytics are changing the work behind the numbers.</p><Link href="/case-files" className="view-all">OPEN CASE FILES →</Link></div></div></section>
 
