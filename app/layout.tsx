@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 
 export const metadata: Metadata = {
   title: "THE LEDGER — Recent Innovations in Accounting Technologies",
-  description: "Digital Accounting · CIA III · Topic 11 — an interactive presentation on recent innovations in accounting technologies.",
+  description: "Digital Accounting · CIA 3 · Topic 11 — an interactive presentation on recent innovations in accounting technologies.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
