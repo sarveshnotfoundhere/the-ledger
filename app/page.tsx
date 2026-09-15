@@ -33,7 +33,7 @@ export default function Home() {
         <div className="landing-center">
           <div className="landing-index">01 / 07</div>
           <div>
-            <div className="landing-kicker">DIGITAL ACCOUNTING CONSULTANCY</div>
+            <div className="landing-kicker">DIGITAL ACCOUNTING CONSULTANCY · CIA 3</div>
             <h1>Accounting<br /><span>after</span> <em>automation.</em></h1>
             <p>How AI, RPA, blockchain, cloud platforms and big data are changing the way accounting work is captured, controlled and understood.</p>
           </div>
