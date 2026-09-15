@@ -90,7 +90,9 @@ export default function Home() {
 
       <section className="money section" id="audit"><div className="eyebrow">05 / INTERACTIVE</div><h2>Follow<br /><span>the money.</span></h2><p>A transaction enters an organization. Technology follows it all the way to the financial statements.</p><div className="flow"><div>INVOICE</div><span>→</span><div>AI EXTRACTION</div><span>→</span><div>ACCOUNTING SYSTEM</div><span>→</span><div>JOURNAL ENTRY</div><span>→</span><div>REPORT</div></div></section>
 
-      <section className="ai section" id="ai"><div className="ai-box"><div className="eyebrow">06 / THE LEDGER AI</div><h2>Ask the<br /><span>ledger.</span></h2><p>An intelligent guide to accounting technology, auditing, fintech and the future of finance.</p><Link href="/ai" className="ledger-button">ASK THE LEDGER AI →</Link></div></section>
+      <section className="case-teaser section"><div className="case-teaser-inner"><div><div className="eyebrow">06 / CASE FILES</div><h2>Technology<br /><span>in the wild.</span></h2></div><div><p>Inside real organizations using AI, cloud platforms and audit analytics to redesign the work behind the numbers.</p><Link href="/case-files" className="view-all">OPEN CASE FILES →</Link></div></div></section>
+
+      <section className="ai section" id="ai"><div className="ai-box"><div className="eyebrow">07 / THE LEDGER AI</div><h2>Ask the<br /><span>ledger.</span></h2><p>An intelligent guide to accounting technology, auditing, fintech and the future of finance.</p><Link href="/ai" className="ledger-button">ASK THE LEDGER AI →</Link></div></section>
 
       <footer><Link href="/" className="logo">THE LEDGER</Link><p>Where Accounting Evolves.<br />A digital publication on the future of finance.</p><div className="footer-bottom"><span>© 2026 THE LEDGER</span><span>ACCOUNTING · TECHNOLOGY · FINANCE</span></div></footer>
     </main>
