@@ -11,10 +11,10 @@ type Story = {
   category: string;
 };
 
-const fallback = [
-  { category: "ACCOUNTING", title: "Live accounting technology feed loading" },
-  { category: "AUDIT", title: "Monitoring the latest developments in digital assurance" },
-  { category: "FINTECH", title: "Tracking the technology reshaping modern finance" },
+const fallback: Story[] = [
+  { category: "ACCOUNTING", title: "Live accounting technology feed loading", link: "/live", source: "The Ledger", publishedAt: "" },
+  { category: "AUDIT", title: "Monitoring the latest developments in digital assurance", link: "/live", source: "The Ledger", publishedAt: "" },
+  { category: "FINTECH", title: "Tracking the technology reshaping modern finance", link: "/live", source: "The Ledger", publishedAt: "" },
 ];
 
 export default function LiveTicker() {
@@ -25,8 +25,16 @@ export default function LiveTicker() {
     const load = async () => {
       try {
         const response = await fetch("/api/live", { cache: "no-store" });
-        const data = await response.json();
-        if (active && Array.isArray(data.stories)) setStories(data.stories);
+        const data: unknown = await response.json();
+        if (
+          active &&
+          typeof data === "object" &&
+          data !== null &&
+          "stories" in data &&
+          Array.isArray(data.stories)
+        ) {
+          setStories(data.stories as Story[]);
+        }
       } catch {
         if (active) setStories([]);
       }
@@ -53,11 +61,7 @@ export default function LiveTicker() {
           {items.map((story, index) => (
             <span className="ticker-item" key={`${story.title}-${index}`}>
               <span className="ticker-category">{story.category}</span>
-              {"link" in story ? (
-                <a className="ticker-story" href={story.link} target="_blank" rel="noreferrer">{story.title}</a>
-              ) : (
-                <span className="ticker-story">{story.title}</span>
-              )}
+              <a className="ticker-story" href={story.link} target="_blank" rel="noreferrer">{story.title}</a>
               <span className="ticker-separator">/</span>
             </span>
           ))}
