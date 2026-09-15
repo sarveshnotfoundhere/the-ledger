@@ -5,8 +5,8 @@ import "./editorial.css";
 import "./neon-green.css";
 import "./accounting-experience.css";
 import "./topic11.css";
+import "./globals-topic-pages.css";
 import "./case-files/case-styles.css";
-import "./ai/ai-styles.css";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
