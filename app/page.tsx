@@ -13,29 +13,58 @@ const chapters = [
 
 export default function Home() {
   return (
-    <main className="landing presentation-landing">
+    <main className="landing deck-home">
       <MoneyCursor />
-      <header className="landing-nav">
-        <Link href="/" className="landing-logo">THE LEDGER <span>/ 11</span></Link>
-        <div>FINANCIAL ACCOUNTING · CIA III · 2026</div>
-        <Link href="/evolution">START →</Link>
+      <div className="deck-frame" />
+      <header className="deck-nav">
+        <Link href="/" className="deck-brand">THE LEDGER <span>11</span></Link>
+        <span>FINANCIAL ACCOUNTING · CIA III</span>
+        <span>2026 / 07 CHAPTERS</span>
       </header>
 
-      <section className="landing-hero">
-        <div className="landing-eyebrow">DIGITAL ACCOUNTING CONSULTANCY · TOPIC 11</div>
-        <div className="landing-center">
-          <div className="landing-index">01 / 07</div>
-          <h1>Recent <em>Innovations</em><br />in Accounting<br />Technologies.</h1>
-          <p>From recording numbers to creating intelligence.</p>
+      <section className="deck-cover">
+        <div className="cover-giant">ACCOUNTING</div>
+        <div className="cover-giant cover-outline">REWIRED.</div>
+        <div className="cover-meta cover-meta-left">
+          <span>RECENT INNOVATIONS IN</span>
+          <span>ACCOUNTING TECHNOLOGIES</span>
         </div>
-        <div className="landing-bottom">
-          <span>REACTIVE PRESENTATION · 07 CHAPTERS</span>
-          <nav aria-label="Presentation chapters">
-            {chapters.map(([no, title, href]) => <Link key={no} href={href}><i>{no}</i>{title}</Link>)}
-          </nav>
-          <span>SCROLL / CLICK TO EXPLORE ↓</span>
+        <div className="cover-meta cover-meta-right">
+          <span>FROM RECORDING</span>
+          <span>TO INTELLIGENCE</span>
+        </div>
+        <div className="cover-scroll">01 / 07<br />SCROLL TO ENTER ↓</div>
+        <div className="cover-stamp">DIGITAL ACCOUNTING<br />CONSULTANCY TEAM</div>
+      </section>
+
+      <section className="deck-intro">
+        <div className="deck-section-number">00 — INTRO</div>
+        <div className="deck-intro-copy">
+          <p className="deck-lead">Accounting is no longer just about recording what happened.</p>
+          <p>AI, automation, blockchain, cloud platforms and data analytics are changing how transactions are captured, controlled, analysed and turned into decisions.</p>
+          <Link href="/evolution" className="deck-enter">BEGIN THE PRESENTATION <span>→</span></Link>
+        </div>
+        <div className="deck-rule-text">ONE SYSTEM · SEVEN CHAPTERS</div>
+      </section>
+
+      <section className="chapter-index">
+        <div className="deck-section-number">INDEX — 01 / 07</div>
+        <div className="chapter-list">
+          {chapters.map(([no, title, href]) => (
+            <Link href={href} key={no} className="chapter-row">
+              <span>{no}</span>
+              <strong>{title}</strong>
+              <em>→</em>
+            </Link>
+          ))}
         </div>
       </section>
+
+      <footer className="deck-footer">
+        <span>THE LEDGER / TOPIC 11</span>
+        <span>REACTIVE PRESENTATION</span>
+        <span>2026</span>
+      </footer>
     </main>
   );
 }
