@@ -5,6 +5,7 @@ import "./editorial.css";
 import "./neon-green.css";
 import "./accounting-experience.css";
 import "./case-files/case-styles.css";
+import "./ai/ai-styles.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
