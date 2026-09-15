@@ -3,128 +3,176 @@ const articles = [
     category: "AI & ACCOUNTING",
     title: "The accountant is becoming a technologist",
     text: "Artificial intelligence is moving beyond automation and into the core of financial decision-making.",
+    date: "SEPT 2026",
+    read: "4 MIN READ",
   },
   {
     category: "DIGITAL AUDIT",
     title: "The audit is becoming continuous",
     text: "Real-time data, automated testing and anomaly detection are reshaping how assurance works.",
+    date: "SEPT 2026",
+    read: "5 MIN READ",
   },
   {
     category: "FINTECH",
     title: "The infrastructure behind modern finance",
     text: "Cloud platforms and connected financial systems are changing how organizations record and report.",
+    date: "SEPT 2026",
+    read: "6 MIN READ",
   },
 ];
+
+const tickerItems = [
+  ["ACCOUNTING", "AI is moving deeper into financial workflows"],
+  ["AUDIT", "Continuous assurance is changing the audit cycle"],
+  ["FINTECH", "Connected infrastructure is reshaping reporting"],
+  ["CLOUD", "Finance teams are moving toward always-on systems"],
+  ["PROFESSION", "The accountant of tomorrow is becoming more technical"],
+];
+
+function TickerSet() {
+  return (
+    <div className="ticker-set" aria-hidden="true">
+      {tickerItems.map(([category, story]) => (
+        <span className="ticker-item" key={`${category}-${story}`}>
+          <span className="ticker-category">{category}</span>
+          <span className="ticker-story">{story}</span>
+          <span className="ticker-separator">/</span>
+        </span>
+      ))}
+    </div>
+  );
+}
 
 export default function Home() {
   return (
     <main>
       {/* HEADER */}
       <header className="header">
-        <div className="logo">THE LEDGER</div>
+        <a href="#top" className="logo" aria-label="The Ledger home">THE LEDGER</a>
 
-        <nav>
-          <a href="#">LATEST</a>
-          <a href="#">ACCOUNTING</a>
-          <a href="#">AI</a>
-          <a href="#">AUDIT</a>
-          <a href="#">FINTECH</a>
-          <a href="#">DATA</a>
+        <nav aria-label="Primary navigation">
+          <a href="#latest">LATEST</a>
+          <a href="#accounting">ACCOUNTING</a>
+          <a href="#ai">AI</a>
+          <a href="#audit">AUDIT</a>
+          <a href="#fintech">FINTECH</a>
+          <a href="#data">DATA</a>
         </nav>
 
         <div className="issue">ISSUE 01 / SEPTEMBER 2026</div>
       </header>
 
-      {/* LIVE TICKER */}
-      <div className="ticker">
+      {/* LIVE EDITORIAL TICKER */}
+      <div className="ticker" aria-label="The Ledger editorial feed">
         <span className="live">
           <span className="live-dot"></span>
           LIVE
         </span>
 
-        <div className="ticker-track">
-          ACCOUNTING &nbsp;&nbsp; • &nbsp;&nbsp;
-          AI IS CHANGING FINANCIAL REPORTING &nbsp;&nbsp;&nbsp; /
-          &nbsp;&nbsp;&nbsp;
-          DIGITAL AUDIT &nbsp;&nbsp; • &nbsp;&nbsp;
-          FINTECH INFRASTRUCTURE EXPANDS &nbsp;&nbsp;&nbsp; /
-          &nbsp;&nbsp;&nbsp;
-          CLOUD ACCOUNTING &nbsp;&nbsp; • &nbsp;&nbsp;
-          THE ACCOUNTANT OF TOMORROW
+        <div className="ticker-track-wrap">
+          <div className="ticker-track">
+            <TickerSet />
+            <TickerSet />
+          </div>
         </div>
       </div>
 
       {/* HERO */}
-<section className="hero">
-  <div className="hero-top">
-    <div className="hero-label">THE FUTURE OF FINANCE</div>
-    <div className="hero-index">VOL. 01 / 2026</div>
-  </div>
+      <section className="hero" id="top">
+        <div className="hero-top">
+          <div className="hero-label">THE FUTURE OF FINANCE</div>
+          <div className="hero-index">VOL. 01 / 2026</div>
+        </div>
 
-  <div className="hero-main">
-    <div className="hero-copy">
-      <h1>
-        Where
-        <br />
-        Accounting
-        <br />
-        <span>evolves.</span>
-      </h1>
+        <div className="hero-main">
+          <div className="hero-copy">
+            <h1>
+              Where
+              <br />
+              Accounting
+              <br />
+              <span>evolves.</span>
+            </h1>
 
-      <p className="hero-description">
-        The technologies, ideas and people reshaping modern finance.
-      </p>
+            <p className="hero-description">
+              The technologies, ideas and people reshaping modern finance.
+            </p>
 
-      <div className="hero-meta">
-        <span>ACCOUNTING</span>
-        <span>AI</span>
-        <span>AUDIT</span>
-        <span>FINTECH</span>
-      </div>
-    </div>
+            <div className="hero-meta">
+              <span>ACCOUNTING</span>
+              <span>AI</span>
+              <span>AUDIT</span>
+              <span>FINTECH</span>
+            </div>
+          </div>
 
-    <div className="hero-visual">
-      <div className="visual-grid"></div>
+          <div className="hero-visual" aria-label="Abstract financial systems visualization">
+            <div className="visual-grid"></div>
 
-      <div className="data-line line-one"></div>
-      <div className="data-line line-two"></div>
-      <div className="data-line line-three"></div>
+            <div className="data-line line-one"></div>
+            <div className="data-line line-two"></div>
+            <div className="data-line line-three"></div>
 
-      <div className="data-node node-one"></div>
-      <div className="data-node node-two"></div>
-      <div className="data-node node-three"></div>
-      <div className="data-node node-four"></div>
+            <div className="data-node node-one"></div>
+            <div className="data-node node-two"></div>
+            <div className="data-node node-three"></div>
+            <div className="data-node node-four"></div>
 
-      <div className="hero-orbit orbit-one"></div>
-      <div className="hero-orbit orbit-two"></div>
+            <div className="hero-orbit orbit-one"></div>
+            <div className="hero-orbit orbit-two"></div>
 
-      <div className="visual-center">
-        <span>LEDGER</span>
-        <strong>01</strong>
-      </div>
+            <div className="visual-center">
+              <span>LEDGER</span>
+              <strong>01</strong>
+            </div>
 
-      <div className="visual-caption">
-        <span>FINANCIAL SYSTEMS</span>
-        <span>EST. 2026</span>
-      </div>
-    </div>
-  </div>
+            <div className="visual-caption">
+              <span>FINANCIAL SYSTEMS</span>
+              <span>EST. 2026</span>
+            </div>
+          </div>
+        </div>
 
-  <div className="hero-bottom">
-    <span>THE DIGITAL ACCOUNTING ERA</span>
-    <span>SCROLL TO EXPLORE ↓</span>
-  </div>
-</section>
+        <div className="hero-bottom">
+          <span>THE DIGITAL ACCOUNTING ERA</span>
+          <span>SCROLL TO EXPLORE ↓</span>
+        </div>
+      </section>
+
+      {/* INTRO */}
+      <section className="section ledger-intro" id="accounting">
+        <div className="ledger-intro-grid">
+          <div>
+            <div className="eyebrow">01 / ABOUT THE LEDGER</div>
+            <h2>The new language of finance.</h2>
+          </div>
+
+          <div className="ledger-intro-copy">
+            <p className="lead">
+              The Ledger is a premium digital publication exploring how
+              technology is rewriting accounting, auditing, financial reporting
+              and the profession itself.
+            </p>
+            <p className="supporting">
+              From artificial intelligence and robotic process automation to
+              cloud accounting, connected data and digital audit, we examine
+              what is changing, why it matters and what comes next.
+            </p>
+            <div className="editorial-rule"></div>
+          </div>
+        </div>
+      </section>
 
       {/* LATEST */}
-      <section className="section latest">
+      <section className="section latest" id="latest">
         <div className="section-heading">
           <div>
             <div className="eyebrow">02 / EDITORIAL</div>
             <h2>The Latest</h2>
           </div>
 
-          <a href="#" className="view-all">
+          <a href="#latest" className="view-all">
             VIEW ALL →
           </a>
         </div>
@@ -142,16 +190,19 @@ export default function Home() {
 
               <p>{article.text}</p>
 
-              <div className="read">
-                READ STORY →
+              <div className="article-meta">
+                <span>{article.date}</span>
+                <span>{article.read}</span>
               </div>
+
+              <div className="read">READ STORY →</div>
             </article>
           ))}
         </div>
       </section>
 
       {/* NUMBERS */}
-      <section className="numbers section">
+      <section className="numbers section" id="data">
         <div className="eyebrow">03 / DATA</div>
 
         <h2>
@@ -184,7 +235,7 @@ export default function Home() {
       </section>
 
       {/* TECHNOLOGY */}
-      <section className="section technology">
+      <section className="section technology" id="fintech">
         <div className="eyebrow">04 / TECHNOLOGY INDEX</div>
 
         <h2>
@@ -221,7 +272,7 @@ export default function Home() {
       </section>
 
       {/* FOLLOW THE MONEY */}
-      <section className="money section">
+      <section className="money section" id="audit">
         <div className="eyebrow">05 / INTERACTIVE</div>
 
         <h2>
@@ -249,7 +300,7 @@ export default function Home() {
       </section>
 
       {/* AI */}
-      <section className="ai section">
+      <section className="ai section" id="ai">
         <div className="ai-box">
           <div className="eyebrow">06 / THE LEDGER AI</div>
 
@@ -264,7 +315,7 @@ export default function Home() {
             and the future of finance.
           </p>
 
-          <button>ASK THE LEDGER AI →</button>
+          <button type="button">ASK THE LEDGER AI →</button>
         </div>
       </section>
 
