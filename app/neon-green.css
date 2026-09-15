@@ -1,0 +1,92 @@
+:root {
+  --green: #39FF14;
+  --ledger-green: #39FF14;
+}
+
+.logo,
+.hero-label,
+.hero h1 span,
+.hero-meta a:hover,
+.live,
+.live-dot,
+.eyebrow,
+.section-number,
+.view-all,
+.article-category,
+.read,
+.ticker-category,
+.ledger-button,
+.live-status,
+.live-updated,
+.live-story-top span,
+.live-story-bottom a {
+  color: #39FF14;
+}
+
+.live-dot,
+.data-node {
+  background: #39FF14;
+}
+
+.header nav a:hover,
+.hero-meta a:hover,
+.ledger-button:hover {
+  color: #39FF14;
+}
+
+.header nav a::after,
+.ledger-button {
+  background-color: #39FF14;
+}
+
+.hero-meta a:hover,
+.ledger-button {
+  border-color: #39FF14;
+}
+
+.visual-grid {
+  background-image:
+    linear-gradient(rgba(57,255,20,.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(57,255,20,.08) 1px, transparent 1px);
+}
+
+.hero-visual::before {
+  background: rgba(57,255,20,.07);
+}
+
+.hero-orbit,
+.orbit-one,
+.orbit-two,
+.visual-center,
+.orb {
+  border-color: rgba(57,255,20,.45);
+}
+
+.data-line {
+  background: linear-gradient(90deg, transparent, rgba(57,255,20,.65), transparent);
+}
+
+.data-node {
+  box-shadow: 0 0 15px rgba(57,255,20,.8);
+}
+
+.live-dot {
+  box-shadow: 0 0 12px rgba(57,255,20,.75);
+}
+
+.ticker-story:hover,
+.live-story h2 a:hover {
+  color: #39FF14;
+}
+
+.ticker-item {
+  cursor: default;
+}
+
+.ticker-story {
+  cursor: pointer;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .live-dot { animation: none !important; }
+}
