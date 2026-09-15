@@ -1,0 +1,30 @@
+.case-page { min-height: 100vh; background: var(--bg); color: var(--text); }
+.case-page footer { border-top: 1px solid var(--border); }
+.case-hero { max-width: 1200px; margin: 0 auto; padding: 130px 5vw 110px; border-bottom: 1px solid var(--border); }
+.case-hero h1 { margin: 20px 0 30px; max-width: 1050px; font-family: "Times New Roman", Times, serif; font-size: clamp(64px, 10vw, 145px); line-height: .88; font-style: italic; font-weight: 400; letter-spacing: -6px; }
+.case-hero h1 span { color: var(--green); }
+.case-hero p { max-width: 640px; margin: 0; color: var(--muted); font-size: 16px; line-height: 1.85; }
+.case-grid { max-width: 1200px; margin: 0 auto; padding: 90px 5vw 150px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+.case-card { border-top: 1px solid var(--border); padding-top: 18px; }
+.case-card-top { display: flex; justify-content: space-between; gap: 14px; color: var(--muted); font: 8px "IBM Plex Mono", monospace; letter-spacing: 1.1px; }
+.case-card-top span:first-child { color: var(--green); }
+.case-visual { height: 280px; margin: 28px 0; border: 1px solid var(--border); border-radius: 22px; background: radial-gradient(circle at 50% 48%, rgba(57,255,20,.09), transparent 20%), repeating-linear-gradient(90deg, transparent 0 38px, rgba(57,255,20,.028) 39px 40px), linear-gradient(135deg, #101612, #080a09); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:14px; position:relative; overflow:hidden; }
+.case-visual::after { content:"CASE / FILE"; position:absolute; right:18px; bottom:16px; color:rgba(57,255,20,.35); font:8px "IBM Plex Mono", monospace; letter-spacing:1.4px; }
+.case-visual span { color: var(--text); font: italic 44px "Times New Roman", serif; }
+.case-visual strong { color: var(--green); font: 8px "IBM Plex Mono", monospace; letter-spacing:1.5px; }
+.case-company { color: var(--green); font: 9px "IBM Plex Mono", monospace; letter-spacing:1.5px; }
+.case-card h2 { margin: 14px 0 16px; font: italic 400 clamp(31px, 3.2vw, 46px)/.98 "Times New Roman", Times, serif; letter-spacing:-1.5px; }
+.case-summary { color:var(--muted); font-size:13px; line-height:1.8; }
+.case-detail { display:grid; grid-template-columns:100px 1fr; gap:15px; margin-top:24px; padding-top:14px; border-top:1px solid var(--border); }
+.case-detail span { color:var(--muted); font:8px "IBM Plex Mono", monospace; letter-spacing:1px; }
+.case-detail strong { color:var(--text); font-size:11px; line-height:1.55; font-weight:500; }
+.case-card blockquote { margin:30px 0 0; padding:20px 0 0 20px; border-left:1px solid var(--green); color:var(--text); font:italic 18px/1.5 "Times New Roman", serif; }
+.case-method { border-top:1px solid var(--border); padding:100px 5vw 130px; }
+.case-method > .eyebrow, .case-method-grid { max-width:1200px; margin-left:auto; margin-right:auto; }
+.case-method-grid { margin-top:48px; display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
+.case-method-grid > div { padding-top:18px; border-top:1px solid var(--border); }
+.case-method-grid strong { color:var(--green); font:10px "IBM Plex Mono", monospace; }
+.case-method-grid h3 { margin:20px 0 8px; font:italic 400 34px/1 "Times New Roman", serif; }
+.case-method-grid p { margin:0; color:var(--muted); font-size:12px; line-height:1.7; }
+@media (max-width: 900px) { .case-grid { grid-template-columns:1fr 1fr; } .case-method-grid { grid-template-columns:1fr 1fr; } }
+@media (max-width: 650px) { .case-hero { padding-top:85px; } .case-hero h1 { letter-spacing:-2px; } .case-grid, .case-method-grid { grid-template-columns:1fr; } }
