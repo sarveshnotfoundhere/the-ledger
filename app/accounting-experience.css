@@ -1,0 +1,222 @@
+.money-cursor {
+  position: fixed;
+  z-index: 9999;
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+  margin-top: 10px;
+  pointer-events: none;
+  border: 1px solid #39FF14;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgba(8, 10, 9, 0.88);
+  box-shadow: 0 0 18px rgba(57, 255, 20, 0.45);
+  transform: translate(-50%, -50%);
+  transition: width 140ms ease, height 140ms ease, box-shadow 140ms ease;
+}
+
+.money-cursor span {
+  color: #39FF14;
+  font: 600 13px/1 "Times New Roman", serif;
+}
+
+body {
+  cursor: crosshair;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+.ticker-track {
+  animation-duration: 72s !important;
+  will-change: transform;
+}
+
+.ticker-track-wrap:hover .ticker-track {
+  animation-play-state: paused;
+}
+
+.ticker-story {
+  cursor: pointer;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -5;
+  pointer-events: none;
+  opacity: 0.42;
+  background:
+    radial-gradient(circle at 13% 18%, rgba(57,255,20,.055) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 82% 72%, rgba(57,255,20,.045) 0 1px, transparent 1.5px),
+    repeating-linear-gradient(0deg, transparent 0 28px, rgba(57,255,20,.018) 29px),
+    repeating-linear-gradient(90deg, transparent 0 28px, rgba(57,255,20,.014) 29px);
+  background-size: 170px 170px, 210px 210px, auto, auto;
+  mix-blend-mode: screen;
+}
+
+body::after {
+  content: "₹  $  €  £  ₿   DEBIT   CREDIT   ASSET   LIABILITY   EQUITY   JOURNAL   LEDGER   001101  001101   DR   CR   ₹  $  €  £";
+  position: fixed;
+  inset: 0;
+  z-index: -4;
+  pointer-events: none;
+  color: rgba(57,255,20,.022);
+  font: 600 9px/4 "IBM Plex Mono", monospace;
+  letter-spacing: 1.8px;
+  white-space: pre-wrap;
+  transform: rotate(-12deg) scale(1.15);
+  transform-origin: center;
+}
+
+.numbers,
+.money,
+.technology,
+.case-teaser,
+.ai {
+  position: relative;
+  overflow: hidden;
+}
+
+.numbers::after,
+.money::after,
+.technology::after,
+.case-teaser::after,
+.ai::after {
+  content: "₹  $  €  £   DEBIT   CREDIT   2026   /   001   /   0101   /   DR   CR";
+  position: absolute;
+  right: -4vw;
+  bottom: -8px;
+  color: rgba(57,255,20,.035);
+  font: 600 10px/2 "IBM Plex Mono", monospace;
+  letter-spacing: 2px;
+  transform: rotate(-8deg);
+  pointer-events: none;
+}
+
+.ftm-shell {
+  margin-top: 55px;
+}
+
+.ftm-steps {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  border-top: 1px solid var(--ledger-border);
+  border-bottom: 1px solid var(--ledger-border);
+}
+
+.ftm-step {
+  min-height: 92px;
+  padding: 18px;
+  border: 0;
+  border-right: 1px solid var(--ledger-border);
+  background: transparent;
+  color: var(--ledger-muted);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 13px;
+  font: 600 9px/1.2 "IBM Plex Mono", monospace;
+  letter-spacing: 1.1px;
+  transition: background 180ms ease, color 180ms ease, padding 180ms ease;
+}
+
+.ftm-step:last-child { border-right: 0; }
+.ftm-step:hover { color: var(--ledger-text); background: rgba(57,255,20,.018); }
+.ftm-step.is-active { color: #39FF14; background: rgba(57,255,20,.04); padding-left: 22px; }
+.ftm-index { color: var(--ledger-border); }
+.ftm-step.is-active .ftm-index { color: #39FF14; }
+
+.ftm-arrowline {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 18px 0;
+  color: #39FF14;
+  font: 12px "IBM Plex Mono", monospace;
+}
+.ftm-arrowline span { height: 1px; flex: 1; background: linear-gradient(90deg, transparent, rgba(57,255,20,.35)); }
+.ftm-arrowline span:last-child { background: linear-gradient(90deg, rgba(57,255,20,.35), transparent); }
+
+.ftm-detail {
+  border: 1px solid var(--ledger-border);
+  border-radius: 24px;
+  background: linear-gradient(145deg, rgba(23,27,24,.82), rgba(8,10,9,.96));
+  padding: clamp(24px, 4vw, 48px);
+  box-shadow: inset 0 0 100px rgba(57,255,20,.018);
+}
+
+.ftm-detail-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  align-items: flex-start;
+}
+.ftm-tag,
+.ftm-counter,
+.ftm-metrics span,
+.ftm-nav button {
+  font: 9px "IBM Plex Mono", monospace;
+  letter-spacing: 1.3px;
+}
+.ftm-tag { color: #39FF14; }
+.ftm-counter { color: var(--ledger-muted); }
+.ftm-detail h3 {
+  max-width: 740px;
+  margin: 16px 0 0;
+  color: var(--ledger-text);
+  font: italic 46px/1.02 "Times New Roman", serif;
+  font-weight: 400;
+  letter-spacing: -1.8px;
+}
+.ftm-detail > p {
+  max-width: 760px;
+  margin: 28px 0 42px;
+  color: var(--ledger-muted);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.ftm-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  border-top: 1px solid var(--ledger-border);
+  border-bottom: 1px solid var(--ledger-border);
+}
+.ftm-metrics > div { padding: 22px 18px 20px 0; }
+.ftm-metrics > div + div { padding-left: 18px; border-left: 1px solid var(--ledger-border); }
+.ftm-metrics span { display: block; color: var(--ledger-muted); margin-bottom: 12px; }
+.ftm-metrics strong { display: block; color: var(--ledger-text); font: 500 14px/1.5 Poppins, sans-serif; }
+
+.ftm-nav { display: flex; justify-content: space-between; gap: 14px; margin-top: 24px; }
+.ftm-nav button { border: 1px solid var(--ledger-border); background: transparent; color: var(--ledger-text); padding: 12px 14px; }
+.ftm-nav button:hover:not(:disabled) { border-color: #39FF14; color: #39FF14; }
+.ftm-nav button:disabled { opacity: .25; cursor: not-allowed; }
+
+@media (max-width: 900px) {
+  .ftm-steps { grid-template-columns: 1fr 1fr; }
+  .ftm-step:nth-child(2n) { border-right: 0; }
+  .ftm-step:nth-child(n+3) { border-top: 1px solid var(--ledger-border); }
+  .ftm-metrics { grid-template-columns: 1fr; }
+  .ftm-metrics > div + div { padding-left: 0; border-left: 0; border-top: 1px solid var(--ledger-border); }
+  .ftm-detail h3 { font-size: 38px; }
+}
+
+@media (max-width: 650px) {
+  .money-cursor { display: none; }
+  body { cursor: auto; }
+  .ftm-steps { grid-template-columns: 1fr; }
+  .ftm-step, .ftm-step:nth-child(2n) { border-right: 0; border-top: 0; }
+  .ftm-step + .ftm-step { border-top: 1px solid var(--ledger-border); }
+  .ftm-detail-top { flex-direction: column; }
+  .ftm-detail h3 { font-size: 32px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track { animation: none !important; }
+}
