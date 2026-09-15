@@ -39,7 +39,7 @@ export default function LiveTicker() {
     };
   }, []);
 
-  const displayStories = useMemo(() => stories.length ? stories : fallback, [stories]);
+  const displayStories = useMemo(() => (stories.length ? stories : fallback), [stories]);
   const items = [...displayStories, ...displayStories];
 
   return (
