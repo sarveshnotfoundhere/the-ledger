@@ -6,6 +6,7 @@ import "./neon-green.css";
 import "./accounting-experience.css";
 import "./topic11.css";
 import "./globals-topic-pages.css";
+import "./page-topic.css";
 import "./case-files/case-styles.css";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
